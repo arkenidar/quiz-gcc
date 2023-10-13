@@ -2,7 +2,31 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: gcc.exe compila il file attivo",
+            "label": "[BUILD] NO .exe BUT .GBIN; C/C++: gcc compila il file attivo",
+            "command": "gcc",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.gbin"
+            ],
+            "options": {
+              /*  "cwd": "C:\\msys64\\mingw64\\bin" */
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Attività generata dal debugger."
+        }
+        ,
+        {
+            "type": "cppbuild",
+            "label": "[BUILD] YES .exe ; C/C++: gcc.exe compila il file attivo",
             "command": "C:\\msys64\\mingw64\\bin\\gcc.exe",
             "args": [
                 "-fdiagnostics-color=always",
